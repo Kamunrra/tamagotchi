@@ -1,0 +1,80 @@
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+}
+
+#tamagotchi-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #f0f0f0;
+  border-radius: 50%;
+  padding: 20px;
+  position: relative;
+}
+
+#tamagotchi {
+  font-size: 2em;
+  position: relative;
+}
+
+button {
+  margin: 5px;
+}
+
+/* Adicione estilos para as mensagens */
+.mensagem {
+  position: absolute;
+  font-size: 1.5em;
+  animation-duration: 2s;
+  animation-timing-function: ease-out;
+  opacity: 0;
+  display: none; /* Adiciona essa linha para ocultar as mensagens inicialmente */
+}
+
+@keyframes saltarEsquerdaSuperior {
+  0%, 100% { top: 50%; left: 50%; transform: translate(-50%, -50%); opacity: 1; }
+  50% { top: 30%; left: 20%; transform: translate(-50%, -50%) scale(1.5); opacity: 0.8; }
+}
+
+@keyframes saltarDireitaSuperior {
+  0%, 100% { top: 50%; left: 50%; transform: translate(-50%, -50%); opacity: 1; }
+  50% { top: 30%; left: 80%; transform: translate(-50%, -50%) scale(1.5); opacity: 0.8; }
+}
+
+@keyframes saltarEsquerdaInferior {
+  0%, 100% { top: 50%; left: 50%; transform: translate(-50%, -50%); opacity: 1; }
+  50% { top: 70%; left: 20%; transform: translate(-50%, -50%) scale(1.5); opacity: 0.8; }
+}
+
+@keyframes saltarDireitaInferior {
+  0%, 100% { top: 50%; left: 50%; transform: translate(-50%, -50%); opacity: 1; }
+  50% { top: 70%; left: 80%; transform: translate(-50%, -50%) scale(1.5); opacity: 0.8; }
+}
+
+/* Estilos adicionais para a mensagem de morte */
+#mensagemMorte {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  transform: translateX(-50%) translateY(-50%);
+  font-size: 1.2em;
+  color: red;
+  text-align: center;
+  padding: 20px;
+  animation-duration: 10s;
+  animation-timing-function: ease-out;
+  opacity: 0;
+  transition: opacity 2s;
+}
+
+@keyframes saltarMorte {
+  0%, 100% { top: 10%; opacity: 0; }
+  50% { top: 20%; opacity: 1.0; }
+}
